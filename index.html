@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>GenieBI - Exact koppelen (ontwikkeling)</title>
+</head>
+<body>
+  <p>Je wordt doorgestuurd naar je lokale GenieBI-ontwikkelomgeving...</p>
+  <noscript>Zet JavaScript aan om de koppeling met Exact af te ronden.</noscript>
+  <script>
+    // Development only: Exact does not accept localhost as a redirect URI, so this fixed public page sends the browser
+    // on to the local API callback, with the code and state from Exact. The target is fixed (no open redirect).
+    location.replace('http://localhost/GenieBI.GenieBI.Application.Api/api/exactcallback' + location.search);
+  </script>
+</body>
+</html>
